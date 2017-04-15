@@ -32,10 +32,10 @@ The code for this step is contained in the second code cell of the IPython noteb
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+''' Number of training examples = 34799
+Number of testing examples = 12630
+Image data shape = (32, 32, 3)
+Number of classes = 43 '''
 
 #### 2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
