@@ -132,19 +132,8 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the last cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
+For the first image, the model is relatively sure that this is a stop sign (probability of above 90%), and the image does contain a stop sign. The results are quite similar for all the images except the No stopping sign. The no stopping sign as we can see below has a split between the labels 40 and 38 with approximate probabilites 0.9 and 0.1 respectively. This confusion in the no stopping sign is to be expected since it has predominant blue and red colors with the blue far more than the red. So the network classified it as keep right (38) and roundabout mandatory (40) which are both blue. However, the roundabout mandatory has more blue in a concentric circular shape so it has more probability than the keep right.
 
 ![alt text][image9]
