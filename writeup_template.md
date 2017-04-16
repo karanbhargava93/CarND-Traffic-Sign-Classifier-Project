@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image6]: report_pictures/3.jpg "Traffic Sign 3"
 [image7]: report_pictures/4.jpg "Traffic Sign 4"
 [image8]: report_pictures/5.jpg "Traffic Sign 5"
-[image9]: report_pictures/softmax.JPG
+[image9]: report_pictures/softmax.JPG "Softmax"
 
 ---
 ### Data Set Summary & Exploration
