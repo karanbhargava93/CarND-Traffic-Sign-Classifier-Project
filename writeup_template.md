@@ -90,15 +90,15 @@ My final model results were:
 * test set accuracy of 0.951
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
+### * What was the first architecture that was tried and why was it chosen?
 I choose the LeNet architecture because it the basis for the paper on traffic sign identification by Yann Lecun
-* What were some problems with the initial architecture?
+### * What were some problems with the initial architecture?
 The initial architecture wasn't working very well with the RGB images, I also tried variations in different colorspaces but the accuracy on the validation set was just half a percent short of 93%. So I discarded it and added a few layers of my own.
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+### * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 As discussed earlier, I found the the original architecture wasn't giving the results as per the expectations. So I tried and fiddled around with different layers. I also did a lot of reading and found out that dropouts have been encorporated into neural networks to increase their robustness. So I encorporated it into every layer of LeNet. Moreover I also learned that pooling adds to the robustness, so I added maxpool layers them as well. The complete architecture is given in a tabular form in answer 3.
-* Which parameters were tuned? How were they adjusted and why?
+### * Which parameters were tuned? How were they adjusted and why?
 I tried and experimented with dropout values and the batch size, since I didn't have a GPU, it was hard to experiment with more parameters due to time contraints. I finally settled with no dropouts i.e. keep_prob = 1.0, which essentially means that the LeNet architecture now just includes the max pooling layers.
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+### * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 Since LeNet was already used earlier for traffic sign classifications I tried to build on it using standard pooling and dropout techniques. Pooling and dropouts add to the robustness of the neural network . It doesn't rely much on a particular feature from the data and tries to learn all possible traits of the data to classify it.
 
 ### Test a Model on New Images
@@ -110,7 +110,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The second image is difficult to classify because ...
+The second image is difficult to classify because its not on the dataset. I just wanted to experiment with the network and hence I chose these.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -121,13 +121,13 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
+| No stopping     			| Roundabout Mandatory 										|
 | Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| No entry	      		| No entry					 				|
+| Speed limit (60km/hr)			| Speed limit (60km/hr)    							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of 95.1. The network couldn't classify the No stopping sign since it was not on the dataset but that was to be expected. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
