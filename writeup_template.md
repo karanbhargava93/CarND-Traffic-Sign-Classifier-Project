@@ -14,13 +14,11 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: report_pictures/data_visualization.JPG "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: report_pictures/1.jpg "Traffic Sign 1"
+[image5]: report_pictures/2.jpg "Traffic Sign 2"
+[image6]: report_pictures/3.jpg "Traffic Sign 3"
+[image7]: report_pictures/4.jpg "Traffic Sign 4"
+[image8]: report_pictures/5.jpg "Traffic Sign 5"
 
 ---
 ### Data Set Summary & Exploration
@@ -88,22 +86,20 @@ The code for training the model is located in the IN[3] cell of the ipython note
 The code for calculating the accuracy of the model is located in the IN[3] and IN[4] cell of the Ipython notebook.
 
 My final model results were:
-* training set accuracy of ?
 * validation set accuracy of 0.946
 * test set accuracy of 0.951
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+I choose the LeNet architecture because it the basis for the paper on traffic sign identification by Yann Lecun
 * What were some problems with the initial architecture?
+The initial architecture wasn't working very well with the RGB images, I also tried variations in different colorspaces but the accuracy on the validation set was just half a percent short of 93%. So I discarded it and added a few layers of my own.
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+As discussed earlier, I found the the original architecture wasn't giving the results as per the expectations. So I tried and fiddled around with different layers. I also did a lot of reading and found out that dropouts have been encorporated into neural networks to increase their robustness. So I encorporated it into every layer of LeNet. Moreover I also learned that pooling adds to the robustness, so I added maxpool layers them as well. The complete architecture is given in a tabular form in answer 3.
 * Which parameters were tuned? How were they adjusted and why?
+I tried and experimented with dropout values and the batch size, since I didn't have a GPU, it was hard to experiment with more parameters due to time contraints. I finally settled with no dropouts i.e. keep_prob = 1.0, which essentially means that the LeNet architecture now just includes the max pooling layers.
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+Since LeNet was already used earlier for traffic sign classifications I tried to build on it using standard pooling and dropout techniques. Pooling and dropouts add to the robustness of the neural network . It doesn't rely much on a particular feature from the data and tries to learn all possible traits of the data to classify it.
 
 ### Test a Model on New Images
 
@@ -114,7 +110,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The second image is difficult to classify because ...
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
