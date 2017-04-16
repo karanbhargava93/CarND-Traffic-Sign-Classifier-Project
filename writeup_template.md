@@ -81,18 +81,16 @@ My final model consisted of the following layers:
 
 #### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-The code for training the model is located in the eigth cell of the ipython notebook. 
-
-To train the model, I used an ....
+The code for training the model is located in the IN[3] cell of the ipython notebook. The model has been trained with adam optimizer and the batch size was set to 128 since I was using a CPU to train it. I ran it for 12 epochs. I chose the values of sigma and mu to be 0.1 and 0 respectively as I choose previously for the LeNet architecture.
 
 #### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
+The code for calculating the accuracy of the model is located in the IN[3] and IN[4] cell of the Ipython notebook.
 
 My final model results were:
 * training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* validation set accuracy of 0.946
+* test set accuracy of 0.951
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
